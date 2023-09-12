@@ -8,7 +8,10 @@ export const POST = async (req: Request) => {
       "https://api.replicate.com/v1/predictions",
       {
         version: "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
-        input: { prompt: body.prompt },
+        input: { prompt: body.prompt,
+        negative_prompt: body.negativePrompt,
+        width: body.width,
+        height: body.height },
       },
       {
         headers: {

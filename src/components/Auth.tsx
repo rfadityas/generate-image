@@ -2,9 +2,8 @@ import React from "react";
 
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { Button } from "@/components/ui/button";
-import { AiOutlineGithub } from "react-icons/ai";
 import AuthButton from "@/components/AuthButton";
+import { AiFillCode } from "react-icons/ai";
 
 const Auth = async () => {
   const supabase = createServerComponentClient({
@@ -16,7 +15,11 @@ const Auth = async () => {
   } = await supabase.auth.getSession();
 
   return (
-    <div className="w-full lg:w-1/2 flex flex-col p-8 justify-between gap-4 pattern-circuit-board-zinc-400/10">
+    <div className="w-full lg:w-1/2 flex flex-col p-8 justify-between gap-4 min-h-screen">
+      <div className="flex items-center text-6xl">
+        <AiFillCode />
+        <h1 className="font-bold">MindMe.</h1>
+      </div>
       <div className="w-full lg:w-3/4">
         <h1 className="text-4xl lg:text-7xl font-bold">Get Inspired,</h1>
         <h1 className="text-4xl lg:text-7xl font-bold">Get Imagining,</h1>

@@ -10,9 +10,9 @@ const response = await axios.get(`https://api.replicate.com/v1/predictions/${par
     },
 });
 
-// if (response.status !== 200) {
-//     return NextResponse.error();
-// }
+if (response.status !== 200) {
+    return NextResponse.error();
+}
 
 const prediction = await response.data;
 return NextResponse.json(prediction);

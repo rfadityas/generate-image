@@ -1,22 +1,14 @@
 import React from "react";
-import { cookies } from "next/headers";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { notFound, redirect } from "next/navigation";
+import Predict from "@/components/Predict";
+import Result from "@/components/Result";
 
 async function Dashboard() {
-  const supabase = createServerComponentClient({
-    cookies,
-  });
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (!session) {
-    redirect("/");
-  }
-
-  return <div>{session.user.id}</div>;
+  return (
+    <div className="min-h-screen grid lg:grid-cols-2">
+      <Predict />
+      <Result />
+    </div>
+  );
 }
 
 export default Dashboard;
