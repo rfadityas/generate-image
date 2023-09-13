@@ -25,9 +25,9 @@ const Auth = async () => {
         <h1 className="text-4xl lg:text-7xl font-bold">Get Imagining,</h1>
         <h1 className="text-4xl lg:text-7xl font-bold">Get Generating.</h1>
         <p className="text-sm lg:text-md font-light mt-4 lg:mt-8">
-          Get Inspired, Get Imagining, Get Generating Find inspiration, let
-          your imagination run wild, and start generating incredible images that
-          tell your unique story.
+          Get Inspired, Get Imagining, Get Generating Find inspiration, let your
+          imagination run wild, and start generating incredible images that tell
+          your unique story.
         </p>
       </div>
       <div className="w-full">
