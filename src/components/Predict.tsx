@@ -71,7 +71,7 @@ const Predict = () => {
           <CardHeader>
             <CardTitle className="flex gap-3 items-center">
               <BsChatRightTextFill />
-              Let's generate!
+              Lets generate!
             </CardTitle>
           </CardHeader>
           <CardContent>
