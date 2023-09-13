@@ -13,6 +13,7 @@ import { VscOutput } from "react-icons/vsc";
 import { AiOutlineReload } from "react-icons/ai";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Result = () => {
   const { prompt, responseData } = usePromptStore();
@@ -27,29 +28,20 @@ const Result = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col gap-4">
-              <Image
-                src={
-                  "https://pbxt.replicate.delivery/2CvSzklESv6vK9RSFRxDAkoSiAblp1YDebqKC4swlSEcZuxIA/out-0.png"
-                }
-                alt="Picture of the author"
-                width={1280}
-                height={720}
-              />
-              <Button>asdasd</Button>
-            </div>
             {responseData && (
               <>
                 {responseData[0].output && (
                   <>
-                    <div>
+                    <div className="flex flex-col gap-4">
                       <Image
                         src={responseData[0].output[0]}
                         alt="Picture of the author"
                         width={responseData[0].input.width}
                         height={responseData[0].input.height}
                       />
-                      <Button>asdasd</Button>
+                      <Link href={responseData[0].output[0]} target="_blank">
+                        <Button className="w-full">Download</Button>
+                      </Link>
                     </div>
                   </>
                 )}

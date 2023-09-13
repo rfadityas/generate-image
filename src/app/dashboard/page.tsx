@@ -4,7 +4,7 @@ import Result from "@/components/Result";
 
 async function Dashboard() {
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
+    <div className="min-h-screen grid lg:grid-cols-2 gap-2">
       <Predict />
       <Result />
     </div>

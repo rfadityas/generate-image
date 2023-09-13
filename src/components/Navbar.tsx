@@ -1,18 +1,19 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import React from "react";
+import AuthButton from "@/components/AuthButton";
+import { usePathname } from "next/navigation";
 
-const Navbar = async () => {
-  const supabase = createClientComponentClient();
-  const [user, setUser] = useState(null);
+const Navbar = () => {
+  const pathname = usePathname();
+  if (pathname !== "/dashboard") return null;
+
   return (
-    <nav className="text-white p-4 fixed top-0 left-0 w-full">
-      <div className="container mx-auto">
-        <div className="flex justify-center">
-          <h1 className="text-4xl font-bold">.</h1>
-        </div>
+    <div className="flex justify-between bg-card px-28 py-4 items-center mb-10 lg:mb-0">
+      <h1 className="text-4xl font-bold">MindMe.</h1>
+      <div className="w-[10rem]">
+        <AuthButton isLogin={true} />
       </div>
-    </nav>
+    </div>
   );
 };
 
